@@ -1,5 +1,5 @@
 openMap true;
-hint "select the landing zone.";
+hint "Select the landing zone.";
 
 private _click_handler = addMissionEventHandler ["MapsingleClick", {
     _objects = nearestTerrainObjects [_this select 1, [], 8];

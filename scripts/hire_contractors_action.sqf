@@ -17,6 +17,7 @@ Used to decide dynamically which unit to spawn to ensure that player's group alw
 */
 detect_unit_to_spawn = {
     player_group_units = units group player;
+    
     unit_types = [];
     {
         unit_types pushBack typeOf _x;
@@ -60,8 +61,8 @@ laptop is the variable used to attach the action to an object.
 spawn_contractors_action = [
     laptop, 		// Object the action is attached to
     "Hire Contractor", // Title of the action
-    "icons\holdAction_meet_ca.paa", // Idle icon shown on screen
-    "icons\holdAction_meet_ca.paa", // Progress icon shown on screen
+    "icons\holdaction_meet_ca.paa", // Idle icon shown on screen
+    "icons\holdaction_meet_ca.paa", // Progress icon shown on screen
     "true", // Condition for the action to be shown
     "count units group player <= 7", // Condition for the action to progress
     {

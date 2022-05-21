@@ -1,7 +1,11 @@
 // myUnit function spawns an engineer
 spawn_engineer = {
-    "B_engineer_F" createUnit [getmarkerPos "contractors_pos", group player, "myUnit = this"];
     
+    current_tasks_array = player call BIS_fnc_tasksUnit;
+    "B_engineer_F" createUnit [getmarkerPos "contractors_pos", group player, "myUnit = this"];
+    {
+       [_x, _x call BIS_fnc_taskState, false] call BIS_fnc_taskSetState;
+    } forEach current_tasks_array;
     comment "Remove existing items";
     removeAllweapons myUnit;
     removeAllItems myUnit;
